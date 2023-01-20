@@ -3,9 +3,11 @@
 
 using namespace std;
 
+#define N 5 
+
 int main()
 {
-#define N 5 
+
 	int i, j, num[N][N];
 	for (i = 0; i < N; i++)
 	{
