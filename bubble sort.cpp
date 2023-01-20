@@ -15,8 +15,9 @@ int main()
 		cout << arr[i] << endl;
 	}
 
+	//外层循环次数为总数-1
 	for (i = 0; i < 5 - 1; i++)
-		for (j = 0; j < 5 - i - 1; j++)
+		for (j = 0; j < 5 - i - 1; j++)//每轮循环进行比较，比较完的不用再次比较
 			if (arr[j] > arr[j + 1])
 			{
 				temp = arr[i];
