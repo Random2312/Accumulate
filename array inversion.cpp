@@ -5,30 +5,38 @@ using namespace std;
 
 int main()
 {
-	int temp, i, j, arr[5];
-	//产生随机数
-	for (i = 0; i < 5; i++)
+	int i = 0, j = 0, temp, start, end, arr[10];
+
+	while (i < 10)
 	{
 		Sleep(1000);
 		srand((unsigned int)time(NULL));
-		arr[i] = rand() % 100 + 1;
+		arr[i] = rand() % 10 + 1;
 		cout << arr[i] << endl;
-	}
-
-	for (i = 0; i < 5 - 1; i++)
-		for (j = 0; j < 5 - i - 1; j++)
-			if (arr[j] > arr[j + 1])
-			{
-				temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-			}
-	i = 0;
-	while (i < 5)
-	{
-		cout << "排序后：" << arr[i] << endl;
 		i++;
 	}
+	start = 0;
+	end = sizeof(arr) / sizeof(arr[0]) - 1;
+
+	while (start <= end)
+	{
+		temp = arr[start];
+		arr[start] = arr[end]; //首尾互换
+		arr[end] = temp;
+
+		/*首部向后移动一个元素，尾部向前移动一个元素*/
+		start++;
+		end--;
+	}
+
+	cout << "--------\n移动后的数组" << endl;
+	while (j < 10)
+	{
+		cout << arr[j] << "   ";
+		j++;
+	}
+
 	system("pause");
 	return 0;
 }
+
