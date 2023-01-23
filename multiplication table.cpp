@@ -1,5 +1,4 @@
 #include <iostream>
-#include <windows.h>
 
 using namespace std;
 
@@ -12,7 +11,8 @@ int main()
 	{
 		for (j = 1; j <= i; j++)
 		{
-			cout << j << "*" << i << "=" << i * j << " ";
+			//使用%-2d左对齐让乘法表更美观
+			printf("%d*%d=%-2d  ", j, i, j * i);
 		}
 		cout << endl;
 	}
