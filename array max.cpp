@@ -1,26 +1,33 @@
 #include <iostream>
-#include <windows.h>
 
 using namespace std;
 
-//查找数组元素中最大数
+#define N 10
+
+//求数组最大元素
 int main()
 {
-	int i = 8, j = 0, arr[100], max = 0;
-
-	while (j < i)
+	int arr[N], max,len;
+	//给数组赋值
+	for (int i = 0; i < N; i++)
 	{
-		Sleep(1000);
-		srand((unsigned int)time(NULL));
-		arr[j] = rand() % 10;
-		cout << arr[j] << endl;
+		arr[i] = rand() % 10;
+		cout << arr[i] << "  ";
+	}
+	//最大值假定为第一个元素
+	max = arr[0];
 
-		if (arr[j] > max)
-			max = arr[j];
-		j++;
+	//计算数组长度，这步可以省略
+	len = sizeof(arr) / sizeof(arr[0]);
+
+	for (int i = 0; i < len; i++)
+	{
+		if (max < arr[i])
+			max = arr[i];
 	}
 
-	cout << "最大数" << max << endl;
+	cout <<endl<< "最大元素" << max << endl;
+
 	system("pause");
 	return 0;
 }
